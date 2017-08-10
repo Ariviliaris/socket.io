@@ -37,7 +37,7 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
+    username = $usernameInput.val().trim();
 
     // If the username is valid
     if (username) {
@@ -54,8 +54,6 @@ $(function() {
   // Sends a chat message
   function sendMessage () {
     var message = $inputMessage.val();
-    // Prevent markup from being injected into the message
-    message = cleanInput(message);
     // if there is a non-empty message and a socket connection
     if (message && connected) {
       $inputMessage.val('');
